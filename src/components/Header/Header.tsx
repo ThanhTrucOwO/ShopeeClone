@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Popover from '../Popover'
 import { useQuery } from '@tanstack/react-query'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import path from 'src/constants/path'
 import { purchasesStatus } from 'src/constants/purchase'
 import purchaseApi from 'src/apis/purchase.api'
@@ -27,13 +27,6 @@ export default function Header() {
   })
 
   const purchasesInCart = purchasesInCartData?.data.data
-
-  console.log('header')
-  useEffect(() => {
-    return () => {
-      console.log('unmount header')
-    }
-  }, [])
 
   return (
     <div className='pb-5 pt-2 bg-[linear-gradient(-180deg,#f53d2d,#f63)] text-white'>
