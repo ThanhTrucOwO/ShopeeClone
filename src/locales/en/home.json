@@ -1,0 +1,13 @@
+{
+  "aside filter": {
+    "all categories": "All Categories",
+    "search filter": "Search Filter",
+    "price range": "Price Range",
+    "min": "₫ MIN",
+    "max": "₫ MAX",
+    "apply": "Apply",
+    "rating": "Rating",
+    "up": "& Up",
+    "delete all": "Delete All"
+  }
+}
