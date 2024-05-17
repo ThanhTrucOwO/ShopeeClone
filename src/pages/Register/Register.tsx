@@ -16,6 +16,7 @@ import { AppContext } from 'src/contexts/app.context'
 import Input from 'src/components/Input'
 import Button from 'src/components/Button'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 type FormData = Pick<Schema, 'email' | 'password' | 'confirm_password'>
 const registerSchema = schema.pick(['email', 'password', 'confirm_password'])
@@ -76,6 +77,10 @@ export default function Register() {
   return (
     <div>
       <div className='bg-orange'>
+        <Helmet>
+          <title>{t('signup')} | Shopee Clone</title>
+          <meta name='description' content='Đăng ký tài khoản vào dự án Shopee Clone' />
+        </Helmet>
         <div className='container'>
           <div className='grid grid-cols-1 lg:grid-cols-5 py-12 lg:py-32 lg:pr-10'>
             <div className='lg:col-span-2 lg:col-start-4'>

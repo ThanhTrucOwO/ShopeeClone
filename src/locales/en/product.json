@@ -6,5 +6,12 @@
   "addtocart": "Add to cart",
   "buynow": "Buy now",
   "description": "Product description",
-  "relate": "YOU MAY ALSO LIKE"
+  "relate": "YOU MAY ALSO LIKE",
+  "sortby": "Sort by",
+  "popular": "Popular",
+  "latest": "Latest",
+  "topsales": "Top sales",
+  "price": "Price",
+  "lowtohigh": "Price: Low to High",
+  "hightolow": "Price: High to Low"
 }

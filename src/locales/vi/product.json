@@ -6,5 +6,12 @@
   "addtocart": "Thêm vào giỏ hàng",
   "buynow": "Mua ngay",
   "description": "Mô tả sản phẩm",
-  "relate": "CÓ THỂ BẠN CŨNG THÍCH"
+  "relate": "CÓ THỂ BẠN CŨNG THÍCH",
+  "sortby": "Sắp xếp theo",
+  "popular": "Phổ biến",
+  "latest": "Mới nhất",
+  "topsales": "Bán chạy",
+  "price": "Giá",
+  "lowtohigh": "Giá: Thấp đến cao",
+  "hightolow": "Giá: Cao đến thấp"
 }
