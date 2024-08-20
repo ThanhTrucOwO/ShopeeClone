@@ -24,7 +24,7 @@ import { AxiosRequestConfig } from 'axios'
 // Refresh Token mới cho me: 5 - 6
 // Gọi lại Me: 6
 
-class Http {
+export class Http {
   instance: AxiosInstance
   private accessToken: string
   private refreshToken: string
