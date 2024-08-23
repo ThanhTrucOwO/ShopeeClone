@@ -1,7 +1,8 @@
-import { describe, expect, it, beforeEach } from 'vitest'
-import { Http } from '../http'
 import HttpStatusCode from 'src/constants/httpStatusCode.enum'
+import { access_token_1s, refresh_token_1000days } from 'src/msw/auth.msw'
+import { describe, expect, it, beforeEach } from 'vitest'
 import { setAccessTokenToLS, setRefreshTokenToLS } from '../auth'
+import { Http } from '../http'
 
 describe('http axios', () => {
   let http = new Http().instance
@@ -9,10 +10,6 @@ describe('http axios', () => {
     localStorage.clear()
     http = new Http().instance
   })
-  const access_token_1s =
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTg4MDk5YTcxYTZjMDI5ZGVjMTUyOSIsImVtYWlsIjoiYXNkYXNkQGdtYXNkLmNvbSIsInJvbGVzIjpbIlVzZXIiXSwiY3JlYXRlZF9hdCI6IjIwMjQtMDgtMjBUMDg6MjM6MjEuODQ2WiIsImlhdCI6MTcyNDE0MjIwMSwiZXhwIjoxNzI0NzQ3MDAxfQ.yl2fA03Nd5z1NP4OhlOx4k9AW90oh6Enwidjxv7aXjU'
-  const refresh_token_1000days =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTg4MDk5YTcxYTZjMDI5ZGVjMTUyOSIsImVtYWlsIjoiYXNkYXNkQGdtYXNkLmNvbSIsInJvbGVzIjpbIlVzZXIiXSwiY3JlYXRlZF9hdCI6IjIwMjQtMDgtMjBUMDg6MjM6MjEuODQ2WiIsImlhdCI6MTcyNDE0MjIwMSwiZXhwIjoxNzMyNzgyMjAxfQ.BFFzAO6P5zZIJGrPSYb80RThhjeTn_ptbI7NXWTkWUg'
   it('Gọi API', async () => {
     // Không nên đụng đến thư mục apis
     // Vì chúng ta test riêng file http thì chỉ "nên" dùng http thôi
@@ -21,12 +18,13 @@ describe('http axios', () => {
     const res = await http.get('products')
     expect(res.status).toBe(HttpStatusCode.Ok)
   })
+
   it('Auth Request', async () => {
     // Nên có 1 cái account test
-    // Và 1 server test
+    // và 1 server test
     await http.post('login', {
-      email: 'kus@gmail.com',
-      password: '123456'
+      email: 'd3@gmail.com',
+      password: 'useruser'
     })
     const res = await http.get('me')
     expect(res.status).toBe(HttpStatusCode.Ok)
