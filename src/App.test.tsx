@@ -40,6 +40,5 @@ describe('App', () => {
     await waitFor(() => {
       expect(screen.getByText(/Bạn đã có tài khoản?/i)).toBeInTheDocument()
     })
-    // await logScreen()
   })
 })

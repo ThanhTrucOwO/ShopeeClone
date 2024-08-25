@@ -22,7 +22,6 @@ describe('Login', () => {
       expect(screen.queryByText('Email là bắt buộc')).toBeTruthy()
       expect(screen.queryByText('Password là bắt buộc')).toBeTruthy()
     })
-    // await logScreen()
   })
   it('Hiển thị lỗi khi nhập value input sai', async () => {
     fireEvent.change(emailInput, {
@@ -40,7 +39,6 @@ describe('Login', () => {
       expect(screen.queryByText('Email không đúng định dạng')).toBeTruthy()
       expect(screen.queryByText('Độ dài từ 6 - 160 ký tự')).toBeTruthy()
     })
-    // await logScreen()
   })
 
   it('Không nên hiển thị lỗi khi nhập lại value đúng', async () => {
@@ -61,7 +59,6 @@ describe('Login', () => {
       expect(screen.queryByText('Độ dài từ 6 - 160 ký tự')).toBeFalsy()
     })
     fireEvent.submit(submitButton)
-    // await logScreen()
     await waitFor(() => {
       expect(document.querySelector('title')?.textContent).toBe('Trang chủ | Shopee Clone')
     })
